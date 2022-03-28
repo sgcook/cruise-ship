@@ -2,7 +2,7 @@ const Port = require("../src/Port.js");
 
 describe("Port", () => {
   it("new object can be instantiated", () => {
-    const port = new Port("Madrid")
+    const port = new Port("Madrid");
 
     expect(port).toBeInstanceOf(Object);
   });
