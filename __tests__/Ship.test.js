@@ -57,7 +57,7 @@ describe("Ship", () =>  {
       expect(ship.currentPort).toBe(calais);
     });
   
-    it("can\'t sail further than its itinerary", () => {
+    it("can't sail further than its itinerary", () => {
       ship.setSail();
       ship.dock();
   
