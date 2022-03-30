@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648495654741" clover="3.2.0">
-  <project timestamp="1648495654741" name="All files">
-    <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5" elements="26" coveredelements="26" complexity="0" loc="19" ncloc="19" packages="1" files="3" classes="3"/>
+<coverage generated="1648635615614" clover="3.2.0">
+  <project timestamp="1648635615614" name="All files">
+    <metrics statements="27" coveredstatements="27" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8" elements="37" coveredelements="37" complexity="0" loc="27" ncloc="27" packages="1" files="3" classes="3"/>
     <file name="Itinerary.js" path="/media/sara/projects/cruise-ships/src/Itinerary.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="8" type="stmt"/>
+      <line num="2" count="9" type="stmt"/>
       <line num="6" count="2" type="stmt"/>
     </file>
     <file name="Port.js" path="/media/sara/projects/cruise-ships/src/Port.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="12" type="stmt"/>
-      <line num="5" count="3" type="stmt"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="2" count="18" type="stmt"/>
+      <line num="3" count="18" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="7" count="11" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="5" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
     </file>
     <file name="Ship.js" path="/media/sara/projects/cruise-ships/src/Ship.js">
-      <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="2" count="5" type="stmt"/>
-      <line num="3" count="5" type="stmt"/>
-      <line num="4" count="5" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="4" type="stmt"/>
+      <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="2" count="6" type="stmt"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
       <line num="9" count="4" type="stmt"/>
-      <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="15" count="3" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="1" type="stmt"/>
       <line num="16" count="3" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
       <line num="21" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
       <line num="23" count="2" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
