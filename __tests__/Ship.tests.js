@@ -54,8 +54,7 @@ describe("Ship", () =>  {
       ship.setSail();
       ship.dock();
   
-      //did I do this right?
-      expect(calais.addShip).toHaveBeenCalledWith(ship);
+      expect(ship.currentPort).toBe(calais);
     });
   
     it("can\'t sail further than its itinerary", () => {
