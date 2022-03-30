@@ -1,14 +1,16 @@
-function Port(name) {
+class Port {
+  constructor(name) {
     this.name = name;
     this.ships = [];
-}
-
-Port.prototype.addShip = function(ship) {
+  }
+  
+  addShip(ship) {
     this.ships.push(ship);
-}
+  }
 
-Port.prototype.removeShip = function(ship) {
+  removeShip(ship) {
     this.ships = this.ships.filter(item => item !== ship);
+  }
 }
 
 module.exports = Port;
