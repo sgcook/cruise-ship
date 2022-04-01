@@ -5,8 +5,6 @@
     this.initialiseSea();
     
     document.querySelector("#sailButton").addEventListener("click", () => {
-      const currentPort = this.ship.currentPort.name;
-      this.renderMessage(`Now departing ${currentPort}!`);
       this.setSail();
     });
   }
@@ -62,9 +60,12 @@
       const nextPortElement = document.querySelector(`[data-port-index = "${nextPortIndex}"]`);
       
       if(!nextPortElement) {
-        this.renderMessage("End of the line!");
+        return this.renderMessage("End of the line!");
       }
-      
+
+      const currentPortName = this.ship.currentPort.name;
+      this.renderMessage(`Now departing ${currentPortName}!`);
+
       const shipElement = document.querySelector("#ship");
       
       const sailInterval = setInterval(() => {
