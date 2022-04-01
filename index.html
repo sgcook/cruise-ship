@@ -17,11 +17,15 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div id="listedPorts">
+      <p id="listedCurrentPort" class="listedPort">Current Port:</p>
+      <p id="listedNextPort" class="listedPort">Next Port:</p>
+    </div>
     <div id="viewport">
       <div id="ports"></div>
       <div id="ship"></div>
-      <button id="sailButton">Set Sail!</button>
     </div>
+    <button id="sailButton">Set Sail!</button>
 
     <script src="./src/controller.js"></script>
     <script src="./src/Port.js"></script>
@@ -38,7 +42,8 @@
       const controller = new Controller(ship);
 
       controller.renderPorts(itinerary.ports);
-      controller.renderShip(ship);
+      controller.renderShip();
+      controller.listPorts();
     </script>
   </body>
 </html>
