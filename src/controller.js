@@ -63,7 +63,7 @@
         return this.renderMessage("End of the line!");
       }
 
-      const currentPortName = this.ship.currentPort.name;
+      const currentPortName = ship.currentPort.name;
       this.renderMessage(`Now departing ${currentPortName}!`);
 
       const shipElement = document.querySelector("#ship");
@@ -76,22 +76,25 @@
           
           const currentPort = ship.currentPort.name;
           this.renderMessage(`We are docking at ${currentPort}!`);
+          console.log(currentPort);
+          this.listPorts();
           clearInterval(sailInterval);
         }
         shipElement.style.left = `${shipLeft + 1}px`;
       }, 20)
-
+      
     },
 
     renderMessage(message) {
       const viewport = document.querySelector("#viewport");
-      const divMessage = document.createElement("div");
-      divMessage.id = "message";
-      divMessage.innerHTML = message;
-      viewport.appendChild(divMessage);
+      const messageElement = document.createElement("div");
+
+      messageElement.id = "message";
+      messageElement.innerHTML = message;
+      viewport.appendChild(messageElement);
 
       setTimeout(() => {
-        viewport.removeChild(divMessage);
+        viewport.removeChild(messageElement);
       }, 2000)
     },
 
@@ -101,13 +104,16 @@
       const listedNextPort = document.querySelector("#listedNextPort");
 
       const currentPortName = ship.currentPort.name;
-      const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort); 
-      const nextPortIndex = currentPortIndex + 1;
-      const nextPortElement = document.querySelector(`[data-port-index = "${nextPortIndex}"]`);
-      const nextPortName = nextPortElement.dataset.portName;
+      const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
 
-      listedCurrentPort.innerHTML += ` ${currentPortName}`;
-      listedNextPort.innerHTML += ` ${nextPortName}`;
+      const nextPortIndex = currentPortIndex + 1;
+
+      const nextPortElement = document.querySelector(`[data-port-index = "${nextPortIndex}"]`);
+
+      const nextPortName = !nextPortElement ? "no more ports!" : nextPortElement.dataset.portName;
+
+      listedCurrentPort.innerHTML = `Current Port: ${currentPortName}`;
+      listedNextPort.innerHTML = `Next Port: ${nextPortName}`;
     }
   }
 

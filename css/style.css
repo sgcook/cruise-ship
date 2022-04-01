@@ -70,4 +70,6 @@ body {
   position: absolute;
   right: 20px;
   top: 10px;
+  max-width: 640px;
+  overflow-x: auto;
 }
