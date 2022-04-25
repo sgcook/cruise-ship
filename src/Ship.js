@@ -2,10 +2,10 @@
   function Ship(itinerary) {
     this.itinerary = itinerary;
     this.previousPort = null;
-    if(this.currentPort) {
-      this.currentPort = itinerary.ports[0];
-      this.currentPort.addShip(this);
-    }
+    this.currentPort = itinerary.ports[0];
+    // if(this.currentPort) {
+      //   this.currentPort.addShip(this);
+    // }
   }
   
   Ship.prototype = {
@@ -16,7 +16,7 @@
       if(currentPortIndex === (itinerary.ports.length - 1)) {
         throw new Error("End of itinerary reached");
       }
-        
+    
       this.previousPort = this.currentPort;
       this.currentPort = null;
       this.previousPort.removeShip(this);

@@ -52,11 +52,15 @@
       const button = document.getElementById("addButton");
       button.addEventListener("click", addPort);
 
-      controller.listPorts();
-
       function addPort(name) {
         event.preventDefault();
-        itinerary.ports.push(new Port(name));
+        const inputText = document.querySelector("input");
+        const addedPort = new Port(inputText.value);
+        itinerary.ports.push(addedPort);
+        if (!ship.currentPort) {
+          ship.currentPort = addedPort;
+          addedPort.addShip(ship);
+        }
         controller.renderPorts(itinerary.ports);
         controller.listPorts();
       }

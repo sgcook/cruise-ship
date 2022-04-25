@@ -76,14 +76,13 @@
       const shipElement = document.querySelector("#ship");
       
       const sailInterval = setInterval(() => {
-        const shipLeft = parseInt(shipElement.style.left, 10);
+        const shipLeft = parseInt(shipElement.style.left || 0, 10);
         if(shipLeft === (nextPortElement.offsetLeft - 32)) {
           ship.setSail();
           ship.dock();
           
           const currentPort = ship.currentPort.name;
           this.renderMessage(`We are docking at ${currentPort}!`);
-          console.log(currentPort);
           this.listPorts();
           clearInterval(sailInterval);
         }
