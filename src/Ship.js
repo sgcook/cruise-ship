@@ -3,9 +3,6 @@
     this.itinerary = itinerary;
     this.previousPort = null;
     this.currentPort = itinerary.ports[0];
-    // if(this.currentPort) {
-      //   this.currentPort.addShip(this);
-    // }
   }
   
   Ship.prototype = {
