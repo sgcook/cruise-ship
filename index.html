@@ -47,10 +47,19 @@
       const itinerary = new Itinerary([]);
       const ship = new Ship(itinerary);
       const controller = new Controller(ship);
-
-      controller.renderPorts(itinerary.ports);
       controller.renderShip();
+
+      const button = document.getElementById("addButton");
+      button.addEventListener("click", addPort);
+
       controller.listPorts();
+
+      function addPort(name) {
+        event.preventDefault();
+        itinerary.ports.push(new Port(name));
+        controller.renderPorts(itinerary.ports);
+        controller.listPorts();
+      }
     </script>
   </body>
 </html>

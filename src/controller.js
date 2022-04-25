@@ -27,15 +27,19 @@
       const portsElement = document.querySelector("#ports");
       portsElement.style.width = "0px";
 
+      while(portsElement.firstChild) {
+        portsElement.removeChild(portsElement.firstChild)
+      }
+
       ports.forEach((port, index) => {
         const newPortElement = document.createElement("div");
         newPortElement.className = "port";
-
+  
         newPortElement.dataset.portName = port.name;
         newPortElement.dataset.portIndex = index;
-
+  
         portsElement.appendChild(newPortElement);
-
+  
         const portsElementWidth = parseInt(portsElement.style.width, 10);
         portsElement.style.width = `${portsElementWidth + 256}px`;
       });
@@ -48,8 +52,11 @@
       const portElement = document.querySelector(`[data-port-index = "${shipPortIndex}"]`);
 
       const shipElement = document.querySelector("#ship");
-      shipElement.style.top = `${portElement.offsetTop + 32}px`;
-      shipElement.style.left = `${portElement.offsetLeft - 32}px`;
+      if(portElement) {
+        shipElement.style.top = `${portElement.offsetTop + 32}px`;
+        shipElement.style.left = `${portElement.offsetLeft - 32}px`;
+
+      }
     },
 
     setSail() {
@@ -103,8 +110,13 @@
       const listedCurrentPort = document.querySelector("#listedCurrentPort");
       const listedNextPort = document.querySelector("#listedNextPort");
 
-      const currentPortName = ship.currentPort.name;
-      const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+      let currentPortName;
+      let currentPortIndex;
+
+      if(ship.currentPort) {
+        currentPortName = ship.currentPort.name;
+        currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+      }
 
       const nextPortIndex = currentPortIndex + 1;
 
@@ -112,7 +124,7 @@
 
       const nextPortName = !nextPortElement ? "no more ports!" : nextPortElement.dataset.portName;
 
-      listedCurrentPort.innerHTML = `Current Port: ${currentPortName}`;
+      listedCurrentPort.innerHTML = `Current Port: ${!currentPortName ? "no port!" : currentPortName}`;
       listedNextPort.innerHTML = `Next Port: ${nextPortName}`;
     }
   }
