@@ -38,6 +38,7 @@ body {
   width: 128px;
   height: 64px;
   position: absolute;
+  left: 0;
 }
 
 #sailButton {
@@ -62,6 +63,9 @@ body {
   width: 100%;
   position: absolute;
   bottom: 0;
+  /* attempt*/
+  left: 0;
+  right: 0;
 }
 
 #listedPorts {

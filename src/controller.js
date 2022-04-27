@@ -55,7 +55,7 @@
       if(portElement) {
         shipElement.style.top = `${portElement.offsetTop + 32}px`;
         shipElement.style.left = `${portElement.offsetLeft - 32}px`;
-
+    
       }
     },
 
@@ -74,6 +74,7 @@
       this.renderMessage(`Now departing ${currentPortName}!`);
 
       const shipElement = document.querySelector("#ship");
+      console.log(shipElement.style.left);
       
       const sailInterval = setInterval(() => {
         const shipLeft = parseInt(shipElement.style.left || 0, 10);
@@ -87,10 +88,16 @@
           clearInterval(sailInterval);
         }
         shipElement.style.left = `${shipLeft + 1}px`;
+        const viewport = document.querySelector('#viewport');
+        viewport.scrollTo({
+          top: 0,
+          left: shipLeft - 20,
+          behavior: 'smooth',
+        });
       }, 20)
+
       
     },
-
     renderMessage(message) {
       const viewport = document.querySelector("#viewport");
       const messageElement = document.createElement("div");
