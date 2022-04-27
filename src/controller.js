@@ -92,7 +92,7 @@
         viewport.scrollTo({
           top: 0,
           left: shipLeft - 20,
-          behavior: 'smooth',
+          behavior: 'auto',
         });
       }, 20)
 
