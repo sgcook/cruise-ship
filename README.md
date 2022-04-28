@@ -1,4 +1,4 @@
-# Cruise-Ship
+# Cruise Ship
 
 ## Concepts learned
 
