@@ -74,8 +74,7 @@
       this.renderMessage(`Now departing ${currentPortName}!`);
 
       const shipElement = document.querySelector("#ship");
-      console.log(shipElement.style.left);
-      
+
       const sailInterval = setInterval(() => {
         const shipLeft = parseInt(shipElement.style.left || 0, 10);
         if(shipLeft === (nextPortElement.offsetLeft - 32)) {
@@ -88,16 +87,20 @@
           clearInterval(sailInterval);
         }
         shipElement.style.left = `${shipLeft + 1}px`;
-        const viewport = document.querySelector('#viewport');
+        const viewport = document.querySelector("#viewport");
         viewport.scrollTo({
           top: 0,
           left: shipLeft - 20,
-          behavior: 'auto',
+          behavior: "auto"
         });
+        
+        const messageElement = document.querySelector("#message");
+        if(messageElement) {
+          messageElement.style.left = `${shipLeft - 20}px`;
+        }
       }, 20)
-
-      
     },
+
     renderMessage(message) {
       const viewport = document.querySelector("#viewport");
       const messageElement = document.createElement("div");
