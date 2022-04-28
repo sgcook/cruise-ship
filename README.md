@@ -14,5 +14,5 @@ Ports are passed in to an itinerary which is passed in to the ship module.
 
 
 ## Gotchas
-- Getting the viewport to move alongside the ship's movement with scrollTo
+- Getting the viewport to move alongside the ship's movement with scrollTo.
 - Similar to above, having the pop-up message move alongside the viewport's movement.
