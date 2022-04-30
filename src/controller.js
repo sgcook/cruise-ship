@@ -112,7 +112,6 @@
       setTimeout(() => {
         viewport.removeChild(messageElement);
       }, 2000)
-      // previously 2000
     },
 
     listPorts() {
