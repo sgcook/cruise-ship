@@ -95,8 +95,8 @@
         });
         
         const messageElement = document.querySelector("#message");
-        if(messageElement) {
-          messageElement.style.left = `${shipLeft - 20}px`;
+        if (messageElement) {
+          messageElement.style.left = `${viewport.scrollLeft}px`;
         }
       }, 20)
     },
@@ -112,6 +112,7 @@
       setTimeout(() => {
         viewport.removeChild(messageElement);
       }, 2000)
+      // previously 2000
     },
 
     listPorts() {
