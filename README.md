@@ -1,4 +1,4 @@
-# Cruise-Ship
+# Cruise Ship
 
 The cruise ship can dock at ports and set sail.
 Ports are passed in to an itinerary which is passed in to the ship module.
